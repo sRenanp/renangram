@@ -1,0 +1,29 @@
+@import "./reset.scss";
+@import "./mixins.scss";
+@import "./variables.scss";
+
+* {
+  font-family: Arial;
+}
+
+html {
+  font-size: 10px;
+}
+
+.tab-bar {
+  @include simple-flex(space-between, center, row);
+  width: 100%;
+  min-height: 50px;
+  background-color: $background-secondary;
+  position: sticky;
+  bottom: 0;
+  padding: 0 26px;
+  box-sizing: border-box;
+
+  .user-img {
+    width: 23px;
+    height: 23px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+}

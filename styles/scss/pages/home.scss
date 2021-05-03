@@ -1,0 +1,144 @@
+@import "../styles.scss";
+
+header {
+  @include simple-flex(space-between, center, row);
+  width: 100%;
+  min-height: 44px;
+  background-color: $background-secondary;
+  padding: 10px 10px;
+  box-sizing: border-box;
+
+  .logo-img {
+    width: 105px;
+    height: auto;
+  }
+
+  .action-icon {
+    width: 24px;
+    height: auto;
+    cursor: pointer;
+  }
+}
+
+.stories-container {
+  display: flex;
+  padding: 9px 10px;
+  gap: 20px;
+  overflow-x: auto;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  .story-item {
+    text-align: center;
+    .content-img {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(215deg, blue 10%, #fd1d1d, #fcb045);
+      position: relative;
+      margin-bottom: 5px;
+      .story-img {
+        border: 2px solid #fff;
+        @include box-round(56px);
+      }
+      .alert-live {
+        bottom: -3px;
+        padding: 2px 4px;
+        border-radius: 3px;
+        position: absolute;
+        border: 1px solid #fff;
+        color: $highlight-contrast-color;
+        background: linear-gradient(215deg, #833ab4, #fd1d1d, #fcb045);
+      }
+    }
+  }
+}
+
+.feed-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  .card-post {
+    display: flex;
+    flex-direction: column;
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      padding: 11px 10px;
+      gap: 10px;
+
+      .author-img {
+        @include box-round(32px);
+      }
+
+      .author-infos {
+        .author-name {
+          font-weight: 600;
+          font-size: 1.3rem;
+          margin-bottom: 1.5px;
+        }
+
+        .author-location {
+          font-size: 1.1rem;
+        }
+      }
+
+      .more-icon {
+        cursor: pointer;
+        margin-left: auto;
+        height: 3px;
+      }
+    }
+
+    .post-img {
+      width: 100%;
+      height: 375px;
+      object-fit: cover;
+    }
+
+    .post-infos {
+      padding: 12px 15px;
+
+      .post-actions {
+        display: flex;
+        gap: 15px;
+
+        .action-icon {
+          height: 20px;
+          width: auto;
+          cursor: pointer;
+
+          &:last-child {
+            margin-left: auto;
+          }
+        }
+      }
+
+      .likes-info {
+        display: flex;
+        align-items: center;
+        padding: 12px 0 5px;
+
+        .people-like-img {
+          @include box-round(17px);
+          margin-right: 6.5px;
+        }
+
+        .likes-quantity {
+          font-size: 1.3rem;
+        }
+      }
+
+      .post-caption {
+        font-size: 1.3rem;
+      }
+    }
+  }
+}
